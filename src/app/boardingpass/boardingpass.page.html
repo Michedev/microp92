@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="dark" fill="clear" (click)="goback()" slot="start">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title>Tarjetas de embarque</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of items" class="bprow">
+      <ion-label>
+        <p>{{item.key}}</p>
+        <h3 [ngClass]="{'bptext': item.name == 'Hora de embarque'}">{{item.value}}</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <p>QR Code</p>
+        <img src="../../assets/icon/qrcode.png">
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

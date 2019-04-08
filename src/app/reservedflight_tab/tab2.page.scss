@@ -1,0 +1,65 @@
+.flightsection{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+ion-title{
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px; 
+}
+
+.flighttext{
+  margin-top: 25vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  color: rgb(167, 167, 167);
+}
+
+
+.flightcard{
+  min-width: 250px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.flightimg{
+  background-image: url('../../assets/flight.png');
+  min-height: 200px;
+}
+
+.flightsubtitle{
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.warningdate{
+  color: #FACA66;
+}
+
+.flighttitle{
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.striped-border {
+  border-bottom-style:  solid;
+  border-bottom-color: rgb(214, 214, 214);
+  border-bottom-width: 1px;
+  width: 98%;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.flightbutton{
+  display: flex;
+  flex-flow: row;
+}

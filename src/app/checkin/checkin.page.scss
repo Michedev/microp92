@@ -1,0 +1,52 @@
+.toolbarcheckin{
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+}
+
+ion-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px; 
+}
+
+.checkinsection{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.checkinrow{
+    flex-grow: 1;    
+}
+
+.text-checkinrow{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 10px;  
+}
+
+.textarea-checkinrow{
+    margin-left: 3px;
+    max-height: 15px;
+
+}
+
+
+.emptyspace{
+  min-height: 1px;
+  flex-grow: 1000;
+}
+
+  
+  .mybutton{
+    --background: linear-gradient(to right,  #67b26f, #4ca2cd);
+    --border-color: transparent;
+    --box-shadow: 2px black; 
+    width: 96vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  

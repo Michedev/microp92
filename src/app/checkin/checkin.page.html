@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-button color="dark" fill="clear" (click)="goback()" slot="start">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-title>Facturacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="checkinsection">
+    <div class="checkinrow">
+      <ion-item>
+        <ion-label position="floating">Nombre y Apellidos</ion-label>
+        <ion-textarea rows="1" [(ngModel)]="name_surname"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Pasaporte</ion-label>
+        <ion-textarea rows="1" [(ngModel)]="passaport"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Número de contacto de emergencia</ion-label>
+        <ion-textarea rows="1" [(ngModel)]="cellnum"></ion-textarea>
+      </ion-item>
+    </div>
+    <span class="emptyspace"></span>
+    <div>
+      <ion-button (click)="finish_checkin()" class="mybutton" [disabled]="name_surname == '' || passaport == '' || cellnum == ''">
+        Salvar la facturacion
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

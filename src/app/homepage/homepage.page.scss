@@ -1,0 +1,66 @@
+$elem_width: 300px;
+
+.cardlist{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+
+.mypadding{
+    padding-top: 4px;
+    padding-left: 10px;
+    padding-right: 7px;
+    padding-bottom: 10px;
+}
+
+.warningflights{
+    width: $elem_width;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.checkinflights{
+    min-width: $elem_width;
+    max-width: $elem_width;
+}
+
+.takeflightscard{
+    background-color: #67b26f;
+    color: white;
+    min-width: $elem_width;
+}
+
+
+.flightcard{
+    min-width: $elem_width;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+  
+.flightimg{
+    background-image: url('../../assets/flight.png');
+    min-height: 200px;
+}
+  
+.divbutton{
+    display: flex;
+    flex-flow: row-reverse;
+    margin-top: 7px;
+}
+
+.imgcard{
+    width: $elem_width;
+}
+
+.imgreserve{
+    min-height: 270px;
+    background-image: url("../../assets/reserve_flight.png");
+    background-position: center;
+}
+
+
+.clearbutton{
+    color: black;
+    align-self: center;
+}

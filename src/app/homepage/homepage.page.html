@@ -1,0 +1,44 @@
+<ion-content padding>
+  <div class="cardlist">
+    <ion-card class="takeflightscard">
+      <div class="mypadding">
+        <h5>
+          Próximo vuelo
+        </h5>
+        Paris - London: 04/03/19 - 19:30
+      </div>
+    </ion-card>
+    <ion-card class="flightcard">
+      <div class="flightimg"></div>
+      <ion-card-content>
+        <div class="divbutton">
+          <ion-button (click)="gotoflights()" color="clear" class="clearbutton">
+            View your flights
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="checkinflights" color="warning">
+      <div class="mypadding">
+        <h5>Advertencia</h5>
+        <p>
+          - 3 Vuelos necesitas consultar y facturación de reserva
+        </p>
+        <p>
+          - 2 vuelos salen el mismo día
+        </p>
+      </div>
+    </ion-card>
+    <ion-card class="imgcard">
+      <div class="imgreserve">
+      </div>
+      <ion-card-content>
+        <div class="divbutton">
+          <ion-button (click)="gotoreserve()" color="clear" class="clearbutton">
+            Reserve new flight
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

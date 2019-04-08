@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="dark" fill="clear" (click)="goback()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title>
+      Seleciona vuelo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-card *ngFor="let dayflight of dayflights" padding>
+      <ion-item>
+        <div class="cardinfo">
+          <div class="cardinfoleft">
+            <ion-label>
+              <h2 class="titlecard">{{flight.from}} - {{flight.to}}</h2>
+              <h5 class="subtitlecard">
+                Fecha: {{flight.date}}
+              </h5>
+              <h5 class="subtitlecard">
+                Time: {{dayflight.time}}
+              </h5>
+            </ion-label>
+          </div>
+          <div class="spacebetween"></div>
+          <div class="cardinforight">
+            <ion-label>
+              <span class="price" [ngClass]="{'bestprice': islowerprice(dayflight.price)}">{{dayflight.price}} €</span>
+            </ion-label>
+          </div>
+        </div>
+      </ion-item>
+      <div class="buttonsection">
+        <ion-button (click)="reserve_flight(dayflight)" color="clear" size="default">
+          <span class="textbutton">
+            Reservar el vuelo
+          </span>
+        </ion-button>
+      </div>
+    </ion-card>
+  </ion-list>
+</ion-content>

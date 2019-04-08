@@ -1,0 +1,64 @@
+ion-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px; 
+  }
+  
+
+.bestprice{
+    color: #67b26f;
+    font-weight: 500;
+
+}
+
+.cardinfo{
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.titlecard{
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.subtitlecard{
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.cardinfoleft{
+}
+
+.spacebetween{
+    flex-grow: 10000;
+}
+
+.cardinforight{
+}
+
+.pricetext{
+    padding-right: 30px;
+}
+
+.price{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+  
+}
+
+.textbutton{
+    color: black;
+}
+
+.buttonsection{
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.buttonzone{
+
+}

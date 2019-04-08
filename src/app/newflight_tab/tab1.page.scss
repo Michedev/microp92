@@ -1,0 +1,70 @@
+$color1: #67b26f;
+$color2: #4ca2cd;
+$gradient: linear-gradient(to right, color1, color2);
+
+.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+
+.flyselector{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  height: 100%;
+  margin-right: 30px;
+
+}
+
+ion-title{
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px; 
+}
+
+
+.flyrow{
+  width: 99wv;
+  margin-top: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.striped-border {
+  border-bottom-style:  solid;
+  border-bottom-color: rgb(214, 214, 214);
+  border-bottom-width: 1px;
+  width: 98%;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.text-flyrow{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 200;  
+}
+
+.emptyspace{
+  min-height: 1px;
+  flex-grow: 1000;
+}
+
+.flybutton{
+  flex-grow: 0;
+
+  display: flex;
+}
+
+.mybutton{
+  --background: linear-gradient(to right,  #67b26f, #4ca2cd);
+  --border-color: transparent;
+  --box-shadow: 2px black; 
+  width: 96vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}

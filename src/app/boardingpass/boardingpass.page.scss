@@ -1,0 +1,21 @@
+.bpsection{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.bprow{
+    flex-basis: 44%;
+}
+
+.bptext{
+    background-color: #67b26f;
+    border-radius: 14px;
+}
+
+ion-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px; 
+  }
+  

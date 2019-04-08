@@ -1,0 +1,39 @@
+<ion-content padding>
+  <div class="flightsection">
+    <p class="flighttext" [hidden]="num_flights > 0">
+        No hay vuelos reservados
+    </p>
+    <div *ngFor="let flight of flights$ | async">
+      <ion-card class="flightcard">
+        <div class="flightimg"></div>
+        <ion-card-subtitle class="flightsubtitle">
+          Vuelo A93FE313
+        </ion-card-subtitle>
+        <ion-card-title class="flighttitle">
+          {{flight.from}} - {{flight.to}}
+        </ion-card-title>
+        <ion-card-subtitle class="flightsubtitle">
+          <p [ngClass]="{'warningdate': multiplesamedate(flight)}">
+            Fecha: {{flight.date}} 
+          </p>
+          Hora: {{flight.time}}
+        </ion-card-subtitle>
+        <div class="striped-border"></div>
+        <ion-card-content>
+          <div class="flightbuttons">
+            <ion-button color="dark" size="small" fill="clear" (click)="visualize_or_checkin(flight)">
+              <span [ngSwitch]="flight.checkin_done">
+                <p *ngSwitchCase="false">
+                  Consulta y facturación de reserva
+                </p>
+                <p *ngSwitchCase="true">
+                  Mira la tarjeta de embarque
+                </p>
+              </span>
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

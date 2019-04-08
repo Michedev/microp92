@@ -1,0 +1,32 @@
+<ion-content padding>
+  <div class="flyselector">
+    <ion-item>
+      <ion-label>Origen</ion-label>
+      <ion-select [(ngModel)]="start">
+        <ion-select-option *ngFor="let start of cities" value="{{start}}">
+          {{start}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Destino</ion-label>
+      <ion-select [(ngModel)]="end">
+        <ion-select-option *ngFor="let dest of cities" value="{{dest}}">
+          {{dest}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="flyrow">
+      <ion-label>
+        Fecha:
+      </ion-label>
+      <ion-datetime display-format="MMM DD, YYYY" min="2019-03-20" max="2020" [(ngModel)]="dateflight"></ion-datetime>
+    </ion-item>
+    <span class="emptyspace"></span>
+    <div class="flybutton">
+      <ion-button (click)="new_flight()" [disabled]="start == '' || end == '' || dateflight == undefined" class="mybutton">
+        Buscar vuelos del dia
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
