@@ -3,7 +3,7 @@
     <p class="flighttext" [hidden]="num_flights > 0">
         No hay vuelos reservados
     </p>
-    <div *ngFor="let flight of flights$ | async">
+    <div *ngFor="let flight of get_flights()">
       <ion-card class="flightcard">
         <div class="flightimg"></div>
         <ion-card-subtitle class="flightsubtitle">
@@ -13,8 +13,8 @@
           {{flight.from}} - {{flight.to}}
         </ion-card-title>
         <ion-card-subtitle class="flightsubtitle">
-          <p [ngClass]="{'warningdate': multiplesamedate(flight)}">
-            Fecha: {{flight.date}} 
+          <p [ngClass]="{'warningdate': multiplesamedate(flight.date)}">
+            Fecha: {{flight.date.toLocaleDateString()}} 
           </p>
           Hora: {{flight.time}}
         </ion-card-subtitle>

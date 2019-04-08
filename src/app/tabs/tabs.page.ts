@@ -14,9 +14,8 @@ export class TabsPage {
   public async present_popover(event){
     let popover = await this.popoverCtrl.create({
       component: PopoverMenuComponent,
-      event
+      event: event
     })
-    this.popoverCtrl.popover = popover
     return await popover.present()
   }
 }

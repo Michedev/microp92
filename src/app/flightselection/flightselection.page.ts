@@ -42,7 +42,6 @@ export class FlightselectionPage implements OnInit {
     this.flight.time = dayflight.time
     this.flight.price = dayflight.price
     this.flight_manager.add_flight(this.flight)
-    this.flight_firebase.add_flight(this.flight)
     this.router.navigateByUrl('/tabs/tab2')
   }
 }

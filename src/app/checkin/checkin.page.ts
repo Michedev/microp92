@@ -16,9 +16,9 @@ export class CheckinPage implements OnInit {
   public passaport: string = ''
   public cellnum: string = ''
 
-  constructor(private router: Router,
-              private location: Location,
-              private flight_service: FlightFirebaseService) {
+  constructor(
+              private router: Router,
+              private location: Location) {
                 this.flight = router.getCurrentNavigation().extras.state['flight']
                }
 
@@ -28,7 +28,6 @@ export class CheckinPage implements OnInit {
   public finish_checkin(){
     this.flight.checkin_done = true
     this.flight.data = new CheckInData(this.name_surname, this.passaport, this.cellnum)
-    this.flight_service.update_flight(this.flight)
     this.goback()
   }
 

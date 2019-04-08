@@ -4,11 +4,11 @@ import { Flight } from '../../class/flight';
 import {Router, NavigationExtras} from '@angular/router';
 import { FlightFirebaseService } from 'src/service/flight-firebase.service';
 import { Observable } from 'rxjs';
-
-function sameday(f1: Flight, f2: Flight){
-  return f1.date == f2.date && f1.key != f2.key
+function sameday(d1: Date, d2: Date){
+  return d1.getMonth() == d2.getMonth() &&
+         d1.getDay() == d2.getDay() &&
+         d1.getFullYear() == d2.getFullYear()
 }
-
 
 @Component({
   selector: 'app-tab2',
@@ -17,18 +17,14 @@ function sameday(f1: Flight, f2: Flight){
 })
 export class Tab2Page {
   public num_flights: number = 0
-  public flights$: Observable<Flight[]>
-
   constructor(private flightService: FlightManagerService,
-              private flight_firebase: FlightFirebaseService,
               private router: Router){}
 
-  // public get_flights(): Observable<Flight[]> {
-  //   let flights = this.flightService.get_flights()
-  //   this.num_flights = flights.length
-  //   return this.flight_firebase.pull_data()
-  //   // return flights
-  // }
+  public get_flights(): Array<Flight> {
+    let flights = this.flightService.get_flights()
+    this.num_flights = flights.length
+    return flights
+  }
 
   public visualize_or_checkin(flight: Flight){
     if(flight.checkin_done){
@@ -38,24 +34,15 @@ export class Tab2Page {
     }
   }
 
-  public multiplesamedate(flight: Flight){
-    var num_samedate = this.flightService.get_flights().map<number>((f) => sameday(f, flight)? 1:0).reduce((a,b) => a+b)
+  public multiplesamedate(date: Date){
+    let flightdates = this.flightService.get_flights().map((f) => f.date)
+    var num_samedate = flightdates.map<number>((d) => sameday(d, date)? 1:0).reduce((a,b) => a+b)
+    console.log("num same date for " + date.toLocaleDateString() + " = " + num_samedate)
     return num_samedate > 1
 
   }
 
   ngOnInit(): void {
     this.num_flights = this.flightService.get_flights().length
-    this.flightService.clear_flights()
-    this.num_flights = 0
-    this.flights$ = this.flight_firebase.pull_data()
-    this.flights$.forEach((flights) =>{
-      for(let f of flights){
-        this.flightService.add_flight(f)
-        this.num_flights += 1
-      }
-    })
-
   }
-
 }
