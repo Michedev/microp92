@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Flight } from '../../class/flight';
 import { FlightManagerService } from '../../service/flight-manager.service';
 import { FlightFirebaseService } from 'src/service/flight-firebase.service';
+import { NavController } from '@ionic/angular';
+import { ClickTrackerService } from 'src/service/click-tracker.service';
 
 @Component({
   selector: 'app-flightselection',
@@ -24,11 +26,14 @@ export class FlightselectionPage implements OnInit {
   constructor(private location: Location,
               private router: Router,
               private flight_manager: FlightManagerService,
-              private flight_firebase: FlightFirebaseService) {
+              private flight_firebase: FlightFirebaseService,
+              private click_tracker: ClickTrackerService,
+              private nav_ctrl: NavController) {
                 this.flight = router.getCurrentNavigation().extras.state['flight']
+                this.click_tracker.record_transition(router)
                }
 
-  ngOnInit() {}
+    ngOnInit(){}
 
   public islowerprice(price: number): boolean{
     return this.dayflights.map((df) => df.price >= price).reduce((a, b) => a && b)
@@ -36,6 +41,7 @@ export class FlightselectionPage implements OnInit {
 
   public goback(){
     this.location.back()
+    this.click_tracker.record_goback('/flightselection')
   }
 
   public reserve_flight(dayflight: Dayflight){
@@ -43,6 +49,11 @@ export class FlightselectionPage implements OnInit {
     this.flight.price = dayflight.price
     this.flight_manager.add_flight(this.flight)
     this.router.navigateByUrl('/tabs/tab2')
+  }
+
+  ionViewDidLoad(){
+    let prevpage = this.router.getCurrentNavigation().previousNavigation.finalUrl.toString()
+    console.log('last page name is : ' + prevpage) 
   }
 }
 

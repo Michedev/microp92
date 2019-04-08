@@ -19,7 +19,6 @@ export class HomepagePage implements OnInit {
 
   public gotoflights() {
     this.router.navigateByUrl('/tabs/tab2')
-
   }
 
 }
